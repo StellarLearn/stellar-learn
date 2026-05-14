@@ -26,7 +26,7 @@ export default function Home() {
           Master blockchain development and earn XLM rewards for every milestone achieved.
         </p>
         <div className="animate" style={{ animationDelay: '0.3s' }}>
-          <Link href="#" className="btn btn-primary">
+          <Link href="/dashboard" className="btn btn-primary">
             Get Started
           </Link>
         </div>
