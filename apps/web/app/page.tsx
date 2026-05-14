@@ -1,16 +1,18 @@
 import Link from "next/link";
+import ConnectWallet from "./components/ConnectWallet";
 
 export default function Home() {
   return (
     <div className="container">
       <div className="bg-glow"></div>
       
-      <nav className="animate">
+      <nav className="animate" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div className="logo">StellarLearn</div>
-        <div className="nav-links">
-          <Link href="/docs" className="btn btn-secondary" style={{ fontSize: '0.9rem', padding: '0.5rem 1.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+          <Link href="/docs" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500 }}>
             Docs
           </Link>
+          <ConnectWallet />
         </div>
       </nav>
 
