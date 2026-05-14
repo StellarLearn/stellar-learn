@@ -24,16 +24,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-          cache-dependency-path: stellar-learn/package-lock.json
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
-        working-directory: stellar-learn
         run: npm install
 
       - name: Run linter
-        working-directory: stellar-learn
         run: npm run lint
 
       - name: Build all packages
-        working-directory: stellar-learn
         run: npm run build

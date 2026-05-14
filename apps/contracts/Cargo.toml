@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "proof-of-learning",
+    "learning-rewards",
+]
+resolver = "2"
