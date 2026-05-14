@@ -1,0 +1,21 @@
+name: Good First Issue
+description: A task suitable for a first-time contributor.
+labels: ["good first issue"]
+body:
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Description
+      description: A clear and concise description of the task.
+    validations:
+      required: true
+  - type: textarea
+    id: implementation-steps
+    attributes:
+      label: Proposed Implementation
+      description: Suggestions on how to implement this.
+  - type: textarea
+    id: resources
+    attributes:
+      label: Resources
+      description: Links to documentation or code examples that could help.
