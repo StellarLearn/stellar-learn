@@ -73,7 +73,7 @@ export async function POST(req: Request) {
       });
     }
 
-    const adminKeypair = Keypair.fromSecret(ADMIN_SECRET);
+    const adminKeypair = Keypair.fromSecret(ADMIN_SECRET!);
     const server = new rpc.Server(RPC_URL);
     const adminAccount = await server.getAccount(adminKeypair.publicKey());
     
@@ -93,7 +93,7 @@ export async function POST(req: Request) {
       }),
       new xdr.ScMapEntry({
         key: xdr.ScVal.scvSymbol('date'),
-        val: xdr.ScVal.scvString(new Date().toISOString().split('T')[0])
+        val: xdr.ScVal.scvString(new Date().toISOString().split('T')[0] || '')
       }),
       new xdr.ScMapEntry({
         key: xdr.ScVal.scvSymbol('learner_name'),
@@ -145,13 +145,6 @@ export async function POST(req: Request) {
       txHash: response.hash,
       minted: true 
     });
-
-    return NextResponse.json({ 
-      success: true, 
-      message: 'NFT Minted successfully',
-      minted: true 
-    });
-
   } catch (error: any) {
     console.error('Quiz submission error:', error);
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
