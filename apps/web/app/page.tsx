@@ -42,6 +42,12 @@ export default function Home() {
             Courses
           </Link>
           <Link
+            href="/profile"
+            style={{ color: "var(--text-secondary)", fontSize: "0.9rem", fontWeight: 500 }}
+          >
+            Profile
+          </Link>
+          <Link
             href="/docs"
             style={{ color: "var(--text-secondary)", fontSize: "0.9rem", fontWeight: 500 }}
           >

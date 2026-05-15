@@ -13,8 +13,8 @@ This roadmap outlines the planned development for StellarLearn. We believe in tr
 - [x] Course smart contract logic finalized.
 - [x] Final Quiz system with automated NFT minting API.
 - [x] Reward claim flow for XLM payouts.
-- [/] User profile dashboard with NFT certificate display.
-- [ ] Initial "Intro to Soroban" course content.
+- [x] User profile dashboard with NFT certificate display.
+- [x] Initial "Intro to Soroban" course content.
 
 ## Phase 3: Community & Scaling
 - [ ] Scholarship pools for decentralized funding.

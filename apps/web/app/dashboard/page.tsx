@@ -51,6 +51,9 @@ export default function Dashboard() {
           StellarLearn
         </Link>
         <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+          <Link href="/profile" style={{ color: "var(--text-secondary)", fontSize: "0.9rem", fontWeight: 500 }}>
+            Profile
+          </Link>
           <Link href="/docs" style={{ color: "var(--text-secondary)", fontSize: "0.9rem", fontWeight: 500 }}>
             Docs
           </Link>
