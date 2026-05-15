@@ -1,11 +1,23 @@
 #![no_std]
-use soroban_sdk::{contract, contractimpl, contracttype, Env, Symbol, Address, storage::PersistentDataKeyByAddress};
+use soroban_sdk::{contract, contractimpl, contracttype, Env, Symbol, Address, String};
+
+#[contracttype]
+#[derive(Clone)]
+pub struct PolMetadata {
+    pub course_name: String,
+    pub date: String,
+    pub learner_name: String,
+    pub image_url: String,
+    pub description: String,
+    pub issuer_name: String,
+}
 
 #[contracttype]
 #[derive(Clone)]
 enum DataKey {
     Admin,
     LearnerCourse(Address, Symbol), // To track completion
+    Metadata(Address, Symbol),      // To store POL metadata
 }
 
 #[contract]
@@ -22,7 +34,13 @@ impl ProofOfLearningContract {
     }
 
     /// Mint a Proof-of-Learning NFT for a learner who passed a course
-    pub fn mint(env: Env, admin: Address, learner: Address, course_id: Symbol) {
+    pub fn mint(
+        env: Env, 
+        admin: Address, 
+        learner: Address, 
+        course_id: Symbol,
+        metadata: PolMetadata
+    ) {
         // Only the admin can authorize minting (e.g., the backend after verifying quiz)
         admin.require_auth();
 
@@ -31,13 +49,17 @@ impl ProofOfLearningContract {
             panic!("Unauthorized: Only the admin can mint");
         }
 
-        let key = DataKey::LearnerCourse(learner.clone(), course_id.clone());
-        if env.storage().persistent().has(&key) {
+        let completion_key = DataKey::LearnerCourse(learner.clone(), course_id.clone());
+        if env.storage().persistent().has(&completion_key) {
             panic!("Course already completed by this learner");
         }
 
         // Store the completion record
-        env.storage().persistent().set(&key, &true);
+        env.storage().persistent().set(&completion_key, &true);
+
+        // Store metadata
+        let metadata_key = DataKey::Metadata(learner.clone(), course_id.clone());
+        env.storage().persistent().set(&metadata_key, &metadata);
 
         // Emit event for the UI/Indexer to pick up
         env.events().publish(
@@ -51,6 +73,13 @@ impl ProofOfLearningContract {
         let key = DataKey::LearnerCourse(learner, course_id);
         env.storage().persistent().has(&key)
     }
+
+    /// Retrieve the metadata for a given Proof-of-Learning
+    pub fn get_metadata(env: Env, learner: Address, course_id: Symbol) -> Option<PolMetadata> {
+        let key = DataKey::Metadata(learner, course_id);
+        env.storage().persistent().get(&key)
+    }
 }
+
 
 mod test;

@@ -1,37 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
+import { useContract } from "../hooks/use-contract";
+import { StellarWalletsKit, Networks } from "@creit.tech/stellar-wallets-kit";
 
 const QUESTIONS = [
+  // ... (keeping same questions)
   {
     question: "What is the primary consensus mechanism used by Stellar?",
-    options: [
-      "Proof of Work",
-      "Stellar Consensus Protocol (SCP)",
-      "Proof of Stake",
-      "Delegated Proof of Stake"
-    ],
+    options: ["Proof of Work", "Stellar Consensus Protocol (SCP)", "Proof of Stake", "Delegated Proof of Stake"],
     correct: 1
   },
   {
     question: "What is the low-level data format used for Stellar transactions?",
-    options: [
-      "JSON",
-      "Protobuf",
-      "XDR",
-      "YAML"
-    ],
+    options: ["JSON", "Protobuf", "XDR", "YAML"],
     correct: 2
   },
   {
     question: "Which account is required to pay for transaction fees on Stellar?",
-    options: [
-      "The Source Account",
-      "The Destination Account",
-      "The Sequence Account",
-      "The Asset Issuer"
-    ],
+    options: ["The Source Account", "The Destination Account", "The Sequence Account", "The Asset Issuer"],
     correct: 0
   }
 ];
@@ -40,6 +28,13 @@ export default function Quiz({ courseId }: { courseId: string }) {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [isFinished, setIsFinished] = useState(false);
+  const [claimStatus, setClaimStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const kit = useMemo(() => new (StellarWalletsKit as any)({
+    network: Networks.TESTNET,
+  }), []);
+
+  const { claimReward, error: contractError } = useContract(kit);
 
   const handleAnswer = (optionIdx: number) => {
     const newAnswers = [...answers, optionIdx];
@@ -52,9 +47,45 @@ export default function Quiz({ courseId }: { courseId: string }) {
     }
   };
 
+  const handleClaim = async () => {
+    const address = localStorage.getItem("stellar_address");
+    if (!address) {
+      alert("Please connect your wallet first.");
+      return;
+    }
+
+    // 1. Submit quiz to backend for verification and NFT minting
+    setClaimStatus("loading");
+    try {
+      const response = await fetch('/api/quiz/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          courseId,
+          userAddress: address,
+          answers
+        })
+      });
+
+      const result = await response.json();
+      if (!result.success) {
+        throw new Error(result.message || 'Verification failed');
+      }
+
+      // 2. If NFT is supposedly minted, now the user can claim the XLM reward
+      const amount = BigInt(50 * 10**7);
+      await claimReward(address, courseId.replace(/-/g, '_'), amount);
+      setClaimStatus("success");
+    } catch (e: any) {
+      console.error(e);
+      setClaimStatus("error");
+    }
+  };
+
   const getScore = () => {
     return answers.reduce((acc, curr, idx) => {
-      return curr === QUESTIONS[idx].correct ? acc + 1 : acc;
+      const q = QUESTIONS[idx];
+      return q && curr === q.correct ? acc + 1 : acc;
     }, 0);
   };
 
@@ -73,17 +104,31 @@ export default function Quiz({ courseId }: { courseId: string }) {
         
         {passed ? (
           <div>
-            <p style={{ color: '#ec4899', fontWeight: 600, marginBottom: '2rem' }}>
-              Requirement met! You are eligible for the 50 XLM reward.
-            </p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-              <button className="btn btn-primary">
-                Claim Reward
-              </button>
-              <Link href="/dashboard" className="btn btn-secondary">
-                Back to Dashboard
-              </Link>
-            </div>
+            {claimStatus === "success" ? (
+              <div style={{ marginBottom: '2rem' }}>
+                <p style={{ color: '#10b981', fontSize: '1.5rem', fontWeight: 700 }}>NFT & 50 XLM Claimed!</p>
+                <p style={{ color: '#94a3b8' }}>Check your wallet for the rewards.</p>
+              </div>
+            ) : (
+              <>
+                <p style={{ color: '#ec4899', fontWeight: 600, marginBottom: '2rem' }}>
+                  Requirement met! You are eligible for the 50 XLM reward.
+                </p>
+                {claimStatus === "error" && <p style={{ color: '#ef4444', marginBottom: '1rem' }}>{contractError || "Failed to claim reward."}</p>}
+                <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+                  <button 
+                    className="btn btn-primary" 
+                    onClick={handleClaim}
+                    disabled={claimStatus === "loading"}
+                  >
+                    {claimStatus === "loading" ? "Processing..." : "Claim Reward"}
+                  </button>
+                  <Link href="/dashboard" className="btn btn-secondary">
+                    Back to Dashboard
+                  </Link>
+                </div>
+              </>
+            )}
           </div>
         ) : (
           <div>
@@ -94,6 +139,7 @@ export default function Quiz({ courseId }: { courseId: string }) {
               setCurrentStep(0);
               setAnswers([]);
               setIsFinished(false);
+              setClaimStatus("idle");
             }}>
               Restart Quiz
             </button>
@@ -104,6 +150,7 @@ export default function Quiz({ courseId }: { courseId: string }) {
   }
 
   const q = QUESTIONS[currentStep];
+  if (!q) return null;
 
   return (
     <div className="card animate" style={{ padding: '3rem' }}>

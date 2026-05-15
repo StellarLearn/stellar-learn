@@ -1,0 +1,7 @@
+/home/gamp/stellar-learn/apps/contracts/target/debug/deps/soroban_builtin_sdk_macros-698ee9c8aa13ab9a.d: /home/gamp/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-builtin-sdk-macros-22.1.3/src/lib.rs /home/gamp/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-builtin-sdk-macros-22.1.3/src/derive_fn.rs /home/gamp/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-builtin-sdk-macros-22.1.3/src/derive_type.rs
+
+/home/gamp/stellar-learn/apps/contracts/target/debug/deps/libsoroban_builtin_sdk_macros-698ee9c8aa13ab9a.so: /home/gamp/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-builtin-sdk-macros-22.1.3/src/lib.rs /home/gamp/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-builtin-sdk-macros-22.1.3/src/derive_fn.rs /home/gamp/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-builtin-sdk-macros-22.1.3/src/derive_type.rs
+
+/home/gamp/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-builtin-sdk-macros-22.1.3/src/lib.rs:
+/home/gamp/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-builtin-sdk-macros-22.1.3/src/derive_fn.rs:
+/home/gamp/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-builtin-sdk-macros-22.1.3/src/derive_type.rs:

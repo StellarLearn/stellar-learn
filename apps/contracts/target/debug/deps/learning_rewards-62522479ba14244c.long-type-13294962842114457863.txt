@@ -1,0 +1,4 @@
+soroban_sdk::Vec<soroban_sdk::Val>
+(soroban_sdk::Address, soroban_sdk::Symbol)
+soroban_sdk::Vec<soroban_sdk::Val>: From<(soroban_sdk::Address, soroban_sdk::Symbol)>
+Into<soroban_sdk::Vec<soroban_sdk::Val>>

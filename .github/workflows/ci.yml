@@ -7,8 +7,9 @@ on:
     branches: [main, develop]
 
 jobs:
+  # ── Node: Lint & Build ──────────────────────────────────────────
   build:
-    name: Lint & Build
+    name: Lint & Build (Node)
     runs-on: ubuntu-latest
 
     strategy:
@@ -34,3 +35,32 @@ jobs:
 
       - name: Build all packages
         run: npm run build
+
+  # ── Rust: Contract Tests ────────────────────────────────────────
+  contracts:
+    name: Soroban Contract Tests (Rust)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust stable toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Cache Cargo registry
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            apps/contracts/target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('apps/contracts/**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
+      - name: Run contract tests
+        working-directory: apps/contracts
+        run: cargo test --workspace

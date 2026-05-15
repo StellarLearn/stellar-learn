@@ -1,19 +1,15 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-});
 
 export const metadata: Metadata = {
   title: "StellarLearn | Learn-to-Earn for African Developers",
-  description: "The decentralized education platform for African developers to learn blockchain and earn rewards.",
+  description:
+    "The decentralised education platform empowering African developers to master blockchain and earn XLM rewards.",
+  openGraph: {
+    title: "StellarLearn",
+    description: "Learn blockchain. Earn rewards. Build the future.",
+    siteName: "StellarLearn",
+  },
 };
 
 export default function RootLayout({
@@ -23,9 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -5,15 +5,16 @@ This roadmap outlines the planned development for StellarLearn. We believe in tr
 ## Phase 1: Foundation (Current)
 - [x] Monorepo setup with Turborepo.
 - [x] Mission-driven documentation.
-- [/] Scaffolding Soroban smart contracts (Proof-of-Learning, Rewards).
-- [ ] Wallet integration (Stellar Wallet Kit).
-- [ ] Landing page & Project vision.
+- [x] Soroban smart contracts (Proof-of-Learning, Learning Rewards).
+- [x] Wallet integration (Stellar Wallet Kit).
+- [x] Premium Landing page & Project vision.
 
 ## Phase 2: MVP - Learn & Earn
-- [ ] Course smart contract deployment on Testnet.
-- [ ] User profile dashboard with NFT certificate display.
-- [ ] Initial "Intro to Soroban" course module.
-- [ ] Automated quiz evaluation and XLM payout system.
+- [x] Course smart contract logic finalized.
+- [x] Final Quiz system with automated NFT minting API.
+- [x] Reward claim flow for XLM payouts.
+- [/] User profile dashboard with NFT certificate display.
+- [ ] Initial "Intro to Soroban" course content.
 
 ## Phase 3: Community & Scaling
 - [ ] Scholarship pools for decentralized funding.
