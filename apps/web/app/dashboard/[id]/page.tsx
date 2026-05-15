@@ -66,9 +66,9 @@ export default async function CourseDetail({ params }: { params: Promise<{ id: s
               <p style={{ fontSize: '0.9rem', color: '#94a3b8', marginBottom: '2rem' }}>
                 Complete the course and pass the quiz with 80%+ to unlock your rewards.
               </p>
-              <button className="btn btn-primary" style={{ width: '100%' }}>
+              <Link href={`/dashboard/${id}/quiz`} className="btn btn-primary" style={{ width: '100%', display: 'inline-block' }}>
                 Take the Quiz
-              </button>
+              </Link>
               <p style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '1rem' }}>
                 Requires connected Stellar wallet
               </p>
