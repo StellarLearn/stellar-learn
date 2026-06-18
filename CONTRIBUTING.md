@@ -84,11 +84,25 @@ To work on smart contracts:
 2. Use `cargo test` to run contract tests.
 3. Use `stellar contract build` to build the WASM binaries.
 
-## Stylecards
+## Code Style
 
-- **JavaScript**: Use ESLint and Prettier (already configured).
-- **Rust**: Use `rustfmt` and `clippy`.
-- **Git**: Use descriptive commit messages. We follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+### JavaScript / TypeScript
+
+- **ESLint**: We use the project's ESLint configuration (extends `@repo/eslint-config`). Run `npm run lint` before committing.
+- **Prettier**: Code is auto-formatted with Prettier. Run `npm run format` to format all files.
+- **Naming conventions**: Use `camelCase` for variables and functions, `PascalCase` for components and types, `SCREAMING_SNAKE_CASE` for constants.
+- **File structure**: Place components in `apps/web/src/components/`, hooks in `apps/web/src/hooks/`, and utility functions in `apps/web/src/lib/`.
+
+### Rust
+
+- Use `rustfmt` for formatting and `clippy` for linting.
+- Follow the standard Rust naming conventions: `snake_case` for functions and variables, `PascalCase` for types.
+
+### Git & Commits
+
+- We follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+- Prefix your commits with one of: `feat:`, `fix:`, `docs:`, `chore:`, `style:`, `refactor:`, `test:`, `ci:`.
+- Keep commits focused on a single change. Use `git rebase -i` to clean up before submitting a PR.
 
 ---
 
