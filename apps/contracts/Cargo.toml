@@ -1,6 +1,6 @@
 [workspace]
 members = [
-    "proof-of-learning",
-    "learning-rewards",
+    "contracts/proof_of_learning",
+    "contracts/reward_pool",
 ]
 resolver = "2"
