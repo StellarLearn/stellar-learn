@@ -1,25 +1,27 @@
 import { SOROBAN_RPC_URL } from "./constants";
-import { getHorizonUrl } from "./stellar";
 
-export function getSorobanRpcServer(): any {
-  const { Server } = require("soroban-rpc");
-  return new Server(SOROBAN_RPC_URL);
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const sorobanRpc = require("soroban-rpc");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const sorobanClient = require("soroban-client");
+
+export function getSorobanRpcServer() {
+  return new sorobanRpc.Server(SOROBAN_RPC_URL);
 }
 
 export async function invokeContract(
   contractId: string,
   functionName: string,
-  args: any[]
-): Promise<any> {
-  const { nativeToScVal, scValToNative } = require("soroban-client");
+  args: unknown[]
+) {
+  const scArgs = args.map((arg) => sorobanClient.nativeToScVal(arg));
   const rpc = getSorobanRpcServer();
 
-  const scArgs = args.map((arg) => nativeToScVal(arg));
   const result = await rpc.callContract({
     contractId,
     method: functionName,
     args: scArgs,
   });
 
-  return scValToNative(result);
+  return sorobanClient.scValToNative(result);
 }
