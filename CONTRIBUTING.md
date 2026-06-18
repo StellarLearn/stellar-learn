@@ -4,14 +4,14 @@ First off, thank you for considering contributing to StellarLearn! It's people l
 
 ## Code of Conduct
 
-By participating in this project, you are expected to uphold our Code of Conduct. Please report unacceptable behavior to `maintainers@teelabs.hq`.
+By participating in this project, you are expected to uphold our Code of Conduct. Please report unacceptable behavior to `maintainers@stellarlearn.xyz`.
 
 ## How Can I Contribute?
 
 ### Reporting Bugs
 
-- **Check if the bug has already been reported** by searching on GitHub under [Issues](https://github.com/TeeLabsHQ/stellar-learn/issues).
-- If you can't find an open issue addressing the problem, [open a new one](https://github.com/TeeLabsHQ/stellar-learn/issues/new). Be sure to include a title and clear description, as much relevant information as possible, and a code sample or an executable test case demonstrating the expected behavior that is not occurring.
+- **Check if the bug has already been reported** by searching on GitHub under [Issues](https://github.com/StellarLearn/stellar-learn/issues).
+- If you can't find an open issue addressing the problem, [open a new one](https://github.com/StellarLearn/stellar-learn/issues/new). Be sure to include a title and clear description, as much relevant information as possible, and a code sample or an executable test case demonstrating the expected behavior that is not occurring.
 
 ### Suggesting Enhancements
 
@@ -22,8 +22,8 @@ By participating in this project, you are expected to uphold our Code of Conduct
 
 Unsure where to begin contributing to StellarLearn? You can start by looking through these `good-first-issue` and `help-wanted` issues:
 
-- [Good First Issues](https://github.com/TeeLabsHQ/stellar-learn/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) - issues which should only require a few lines of code, and a test or two.
-- [Help Wanted Issues](https://github.com/TeeLabsHQ/stellar-learn/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) - issues which should be a bit more involved than `good-first-issue` issues.
+- [Good First Issues](https://github.com/StellarLearn/stellar-learn/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) - issues which should only require a few lines of code, and a test or two.
+- [Help Wanted Issues](https://github.com/StellarLearn/stellar-learn/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) - issues which should be a bit more involved than `good-first-issue` issues.
 
 ## Pull Requests
 
@@ -34,7 +34,39 @@ Unsure where to begin contributing to StellarLearn? You can start by looking thr
 5. Make sure your code lints (`npm run lint`).
 6. Issue that pull request!
 
-## Development Setup
+## Local Development Setup
+
+### Prerequisites
+
+- Node.js 20+
+- npm 11+
+- Rust & Cargo (for Soroban contracts)
+- [Stellar CLI](https://developers.stellar.org/docs/tools/stellar-cli/install)
+
+### Step-by-Step
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/StellarLearn/stellar-learn.git
+   cd stellar-learn
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment variables:**
+   ```bash
+   cp .env.example .env
+   ```
+   Edit `.env` with your own values. See `.env.example` for all required variables.
+
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   This starts the web app at `http://localhost:3000` and the docs app at `http://localhost:3001`.
 
 ### Monorepo Workflow
 
