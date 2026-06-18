@@ -9,6 +9,10 @@ StellarLearn is a decentralized education platform that incentivizes learning th
 
 ---
 
+## 💡 The Problem
+
+Millions of African developers are eager to enter blockchain development but face a critical barrier: there is no immediate economic incentive to complete training. StellarLearn solves this by paying developers in XLM/USDC the moment they pass a verified quiz — turning education into an income stream from day one.
+
 ## 🚀 Vision
 
 We believe that education should be an investment that pays back immediately. By leveraging the Stellar network's low fees and fast settlement, StellarLearn provides:
