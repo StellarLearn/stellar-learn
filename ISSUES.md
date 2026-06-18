@@ -2,6 +2,23 @@
 
 These issues are designed to align with the "Good First Issue" strategy and demonstrate a clear path for contributors.
 
+---
+
+## Known Limitations
+
+The following are known limitations of the current codebase:
+
+1. **Wallet integration not yet complete** — The Connect Wallet button and Stellar Wallet Kit integration are stubbed but not functional. Users cannot yet authenticate or sign transactions.
+2. **Soroban contracts on Testnet only** — All smart contracts are currently deployed and tested solely on Stellar Testnet. Mainnet deployment is pending security audits and further testing.
+3. **No authentication layer yet** — There is no user authentication, session management, or JWT flow. NEXTAUTH configuration is templated but not implemented.
+4. **Course content is placeholder** — The course listing page uses hardcoded mock data. No real curriculum, quiz engine, or content management system exists yet.
+5. **No automated reward payouts** — The reward distribution pipeline from quiz completion to XLM/USDC payout is not implemented on the frontend or backend.
+6. **Single-language support** — All UI text is in English. Internationalization (i18n) scaffolding, particularly for French, has not been started.
+
+We track these limitations and are actively working to resolve them. Contributions are welcome!
+
+---
+
 ## [Good First Issue] Implement Wallet Connection UI
 **Title**: [Good First Issue] Implement Wallet Connection UI using Stellar Wallet Kit
 **Description**: 
