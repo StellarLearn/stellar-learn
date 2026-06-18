@@ -1,0 +1,14 @@
+# Global owners for all files
+* @teeschima
+
+# Soroban smart contracts
+/apps/contracts/ @teeschima
+
+# Frontend application
+/apps/web/ @teeschima
+
+# Documentation site
+/apps/docs/ @teeschima
+
+# Shared packages
+/packages/ @teeschima
