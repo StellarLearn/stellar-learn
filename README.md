@@ -74,6 +74,10 @@ Check out our [Good First Issues](https://github.com/StellarLearn/stellar-learn/
 
 See [ROADMAP.md](ROADMAP.md) for our current progress and future plans.
 
+## ⚠️ Known Issues
+
+See [ISSUES.md](ISSUES.md) for a list of known issues, limitations, and planned improvements.
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
