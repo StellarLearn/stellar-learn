@@ -114,6 +114,15 @@ See [ROADMAP.md](ROADMAP.md) for our current progress and future plans.
 
 See [ISSUES.md](ISSUES.md) for a list of known issues, limitations, and planned improvements.
 
+## 🏆 Grant Support
+
+StellarLearn is actively seeking grant funding to accelerate development and expand our impact across Africa. We are applying to:
+
+- **[Drips Wave](https://drips.network/wave)** — A funding wave from the Drips protocol that supports open-source projects building on Stellar. StellarLearn's learn-to-earn model aligns perfectly with Drips' mission to fund public goods.
+- **[GrantFox](https://grantfox.io)** — A Web3 grant discovery and application platform. Our focus on African developer education and real economic impact makes us a strong candidate for ecosystem growth grants.
+
+If you represent a grant program or ecosystem fund interested in supporting blockchain education in Africa, please reach out to **grants@stellarlearn.xyz**.
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
