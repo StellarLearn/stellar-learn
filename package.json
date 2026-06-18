@@ -1,6 +1,10 @@
 {
   "name": "stellar-learn",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StellarLearn/stellar-learn.git"
+  },
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
