@@ -9,6 +9,15 @@ StellarLearn is a decentralized education platform that incentivizes learning th
 
 ---
 
+## 💡 How It Works
+
+1. **Connect Wallet** — Developer connects their Stellar wallet (Freighter, Lobstr, etc.).
+2. **Enroll in a Course** — Browse the marketplace and enroll in a blockchain course.
+3. **Complete a Quiz** — Pass a verified quiz that tests your understanding of the material.
+4. **Smart Contract Verifies Score** — A Soroban smart contract on Stellar validates the quiz result.
+5. **Get Paid Instantly** — XLM or USDC is paid out automatically to your wallet.
+6. **Mint Proof-of-Learning NFT** — A verifiable on-chain certificate is minted as an NFT for your portfolio.
+
 ## 💡 The Problem
 
 Millions of African developers are eager to enter blockchain development but face a critical barrier: there is no immediate economic incentive to complete training. StellarLearn solves this by paying developers in XLM/USDC the moment they pass a verified quiz — turning education into an income stream from day one.
