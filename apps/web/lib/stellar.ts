@@ -6,7 +6,10 @@ const horizonUrls: Record<string, string> = {
 };
 
 export function getHorizonUrl(): string {
-  return horizonUrls[STELLAR_NETWORK] || horizonUrls.testnet;
+  if (STELLAR_NETWORK === "mainnet") {
+    return "https://horizon.stellar.org";
+  }
+  return "https://horizon-testnet.stellar.org";
 }
 
 export function getServer() {
