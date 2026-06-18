@@ -2,6 +2,7 @@
   "name": "stellar-learn",
   "private": true,
   "description": "Decentralized learn-to-earn platform for African blockchain developers, powered by Stellar and Soroban",
+  "keywords": ["stellar", "soroban", "learn-to-earn", "blockchain", "education", "africa", "web3", "defi"],
   "repository": {
     "type": "git",
     "url": "https://github.com/StellarLearn/stellar-learn.git"
