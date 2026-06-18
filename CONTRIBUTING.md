@@ -34,6 +34,20 @@ Unsure where to begin contributing to StellarLearn? You can start by looking thr
 5. Make sure your code lints (`npm run lint`).
 6. Issue that pull request!
 
+### Pull Request Checklist
+
+Before submitting your PR, confirm the following:
+
+- [ ] My code builds without errors (`npm run build`)
+- [ ] All existing and new tests pass (`npm test`)
+- [ ] My code passes linting (`npm run lint`)
+- [ ] I have removed all `console.log` statements (except in test files or where explicitly needed)
+- [ ] I have updated documentation if my change introduces new behavior
+- [ ] I have added or updated tests to cover my changes
+- [ ] I have updated `.env.example` if I added a new environment variable
+- [ ] My commit messages follow the Conventional Commits format
+- [ ] I have reviewed my own code before submitting
+
 ## Local Development Setup
 
 ### Prerequisites
