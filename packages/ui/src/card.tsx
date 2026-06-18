@@ -1,27 +1,27 @@
 import { type JSX } from "react";
 
-export function Card({
-  className,
-  title,
-  children,
-  href,
-}: {
-  className?: string;
+interface CardProps {
   title: string;
   children: React.ReactNode;
-  href: string;
-}): JSX.Element {
+  className?: string;
+  onClick?: () => void;
+}
+
+export function Card({ title, children, className, onClick }: CardProps): JSX.Element {
   return (
-    <a
+    <div
       className={className}
-      href={`${href}?utm_source=create-turbo&utm_medium=basic&utm_campaign=create-turbo"`}
-      rel="noopener noreferrer"
-      target="_blank"
+      onClick={onClick}
+      style={{
+        background: "white",
+        border: "1px solid #e5e7eb",
+        borderRadius: "12px",
+        padding: "1.5rem",
+        cursor: onClick ? "pointer" : undefined,
+      }}
     >
-      <h2>
-        {title} <span>-&gt;</span>
-      </h2>
-      <p>{children}</p>
-    </a>
+      <h3 style={{ margin: "0 0 0.5rem", fontSize: "1.125rem", fontWeight: 700 }}>{title}</h3>
+      <div style={{ color: "#6b7280", fontSize: "0.875rem", lineHeight: 1.5 }}>{children}</div>
+    </div>
   );
 }
