@@ -3,11 +3,14 @@ use super::*;
 use soroban_sdk::{Env, Address};
 
 #[test]
-fn test_claim() {
+fn test_distribute_reward() {
     let env = Env::default();
-    let contract_id = env.register_contract(None, LearningRewardsContract);
-    let client = LearningRewardsContractClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, RewardPoolContract);
+    let client = RewardPoolContractClient::new(&env, &contract_id);
 
-    let learner = Address::generate(&env);
-    client.claim(&learner, &100);
+    let recipient = Address::generate(&env);
+    let token = Address::generate(&env);
+    let amount: i128 = 100;
+
+    client.distribute_reward(&recipient, &amount, &token);
 }
