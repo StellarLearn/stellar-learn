@@ -4,6 +4,8 @@
 
 StellarLearn is a decentralized education platform that incentivizes learning through verifiable rewards (XLM/USDC) and Proof-of-Learning NFTs. Our mission is to bridge the gap between blockchain education and economic opportunity for developers across the African continent.
 
+![Status: Active Development](https://img.shields.io/badge/status-active%20development-brightgreen)
+![Built on Stellar](https://img.shields.io/badge/built%20on-Stellar-blue)
 [![CI](https://github.com/StellarLearn/stellar-learn/actions/workflows/ci.yml/badge.svg)](https://github.com/StellarLearn/stellar-learn/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
