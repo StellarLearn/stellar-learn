@@ -74,6 +74,11 @@ We love contributors! Whether you're fixing a bug, improving documentation, or p
 
 Check out our [Good First Issues](https://github.com/StellarLearn/stellar-learn/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) to get started.
 
+## 👥 Team
+
+- **[@teeschima](https://github.com/teeschima)** — Founder & Lead Developer
+- *We're looking for contributors! Open an issue or PR to join the team.*
+
 ## 🗺 Roadmap
 
 See [ROADMAP.md](ROADMAP.md) for our current progress and future plans.
