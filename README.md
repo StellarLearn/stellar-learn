@@ -74,6 +74,17 @@ We love contributors! Whether you're fixing a bug, improving documentation, or p
 
 Check out our [Good First Issues](https://github.com/StellarLearn/stellar-learn/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) to get started.
 
+## 🌍 Why Africa
+
+Africa is home to the world's youngest and fastest-growing developer population, yet traditional education-to-income pipelines remain broken. Key factors make this the perfect opportunity:
+
+- **Underbanked talent**: Over 60% of Sub-Saharan Africans lack access to traditional banking, making crypto-native solutions not just convenient but necessary.
+- **Mobile-first internet**: With smartphone penetration soaring, African developers are leapfrogging desktop-centric infrastructure straight to mobile web3.
+- **Growing blockchain interest**: Countries like Nigeria, Kenya, and South Africa rank among the top globally for crypto adoption and developer mindshare.
+- **Stellar's natural fit**: Stellar's low transaction fees (~0.00001 XLM), fast settlement (3–5 seconds), and built-in decentralized exchange make it ideal for micro-payouts that power learn-to-earn at scale.
+
+StellarLearn is purpose-built to convert this demographic tailwind into real economic outcomes for African developers.
+
 ## 👥 Team
 
 - **[@teeschima](https://github.com/teeschima)** — Founder & Lead Developer
