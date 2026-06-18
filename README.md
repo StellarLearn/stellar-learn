@@ -74,6 +74,13 @@ We love contributors! Whether you're fixing a bug, improving documentation, or p
 
 Check out our [Good First Issues](https://github.com/StellarLearn/stellar-learn/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) to get started.
 
+## 🔗 Links
+
+- **Documentation**: [docs.stellarlearn.xyz](https://docs.stellarlearn.xyz)
+- **GitHub**: [github.com/StellarLearn/stellar-learn](https://github.com/StellarLearn/stellar-learn)
+- **Twitter / X**: [@StellarLearn](https://x.com/StellarLearn)
+- **Discord**: [Join our community](https://discord.gg/stellarlearn)
+
 ## 🌍 Why Africa
 
 Africa is home to the world's youngest and fastest-growing developer population, yet traditional education-to-income pipelines remain broken. Key factors make this the perfect opportunity:
