@@ -14,6 +14,9 @@ This roadmap outlines the planned development for StellarLearn. We believe in tr
 - [ ] User profile dashboard with NFT certificate display.
 - [ ] Initial "Intro to Soroban" course module.
 - [ ] Automated quiz evaluation and XLM payout system.
+- [ ] Basic authentication with Stellar wallet sign-in.
+- [ ] Admin dashboard for course creation.
+- [ ] Testnet faucet integration for new users.
 
 ## Phase 3: Community & Scaling — Q4 2025
 - [ ] Scholarship pools for decentralized funding.
