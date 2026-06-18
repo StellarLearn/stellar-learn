@@ -4,7 +4,7 @@
 
 StellarLearn is a decentralized education platform that incentivizes learning through verifiable rewards (XLM/USDC) and Proof-of-Learning NFTs. Our mission is to bridge the gap between blockchain education and economic opportunity for developers across the African continent.
 
-[![CI](https://github.com/TeeLabsHQ/stellar-learn/actions/workflows/ci.yml/badge.svg)](https://github.com/TeeLabsHQ/stellar-learn/actions/workflows/ci.yml)
+[![CI](https://github.com/StellarLearn/stellar-learn/actions/workflows/ci.yml/badge.svg)](https://github.com/StellarLearn/stellar-learn/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
@@ -53,7 +53,7 @@ We believe that education should be an investment that pays back immediately. By
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/TeeLabsHQ/stellar-learn.git
+   git clone https://github.com/StellarLearn/stellar-learn.git
    ```
 2. Install dependencies:
    ```bash
@@ -68,7 +68,7 @@ We believe that education should be an investment that pays back immediately. By
 
 We love contributors! Whether you're fixing a bug, improving documentation, or proposing new features, please see our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-Check out our [Good First Issues](https://github.com/TeeLabsHQ/stellar-learn/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) to get started.
+Check out our [Good First Issues](https://github.com/StellarLearn/stellar-learn/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) to get started.
 
 ## 🗺 Roadmap
 
